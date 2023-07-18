@@ -740,15 +740,15 @@
             const protectCode = () => {
                 protectCodeKey();
                 ((function () {
-                    let callbacks: any[] = []
+                    let callbacks = []
                     const timeLimit = 50
                     let open = false
                     setInterval(loop, 1)
                     return {
-                        addListener(fn: any) {
+                        addListener(fn) {
                             callbacks.push(fn)
                         },
-                        cancleListenr(fn: any) {
+                        cancleListenr(fn) {
                             callbacks = callbacks.filter((v) => {
                                 return v !== fn
                             })
@@ -778,8 +778,6 @@
                 })
             }
         }
-
-
 
 
     </script>
